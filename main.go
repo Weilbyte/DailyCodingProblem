@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	curSolvedList := []int{1, 2} //Add new number for each solved problem
+	curSolvedList := []int{1, 2, 3} //Add new number for each solved problem
 	var curSolvedString string
 	var curSolvedCount int8 = 0
 	for _, number := range curSolvedList {
@@ -29,6 +29,8 @@ func main() {
 		problems.Problem1()
 	case "2":
 		problems.Problem2()
+	case "3":
+		problems.Problem3()
 	default:
 		fmt.Println("Uh oh, that didnt work :c")
 	}
