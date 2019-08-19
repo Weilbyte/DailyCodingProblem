@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strconv"
-	"strings"
 )
 
 func Problem1() {
@@ -14,19 +13,8 @@ func Problem1() {
 }
 
 func problem1solution() {
-	numList := []int{}
+	numList := InputNumbersBySpace("Provide list of numbers seperated by a space")
 	match := false
-	fmt.Print("Provide list of numbers seperated by a space: ")
-	numListStringInput := bufio.NewScanner(os.Stdin)
-	numListStringInput.Scan()
-	numListString := strings.Fields(numListStringInput.Text())
-	for _, n := range numListString {
-		nInteger, err := strconv.Atoi(n)
-		numList = append(numList, nInteger)
-		if err != nil {
-			fmt.Printf("Error: %s", err)
-		}
-	}
 	fmt.Print("k=")
 	kStr := bufio.NewScanner(os.Stdin)
 	kStr.Scan()

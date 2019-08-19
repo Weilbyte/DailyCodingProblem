@@ -1,11 +1,7 @@
 package problems
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
 )
 
 func Problem2() {
@@ -14,19 +10,8 @@ func Problem2() {
 }
 
 func problem2solution() {
-	numArrayOriginal := []int{}
+	numArrayOriginal := InputNumbersBySpace("Provide a list of numbers to add to array, seperated by a space")
 	numArrayResult := []int{}
-	fmt.Print("Provide a list of numbers to add to array, seperated by a space: ")
-	numListInput := bufio.NewScanner(os.Stdin)
-	numListInput.Scan()
-	numListInputArray := strings.Fields(numListInput.Text())
-	for _, x := range numListInputArray {
-		res, err := strconv.Atoi(x)
-		if err != nil {
-			fmt.Println("Error: ", err)
-		}
-		numArrayOriginal = append(numArrayOriginal, res)
-	}
 	for xi, _ := range numArrayOriginal {
 		sum := 1
 		for yi, y := range numArrayOriginal {
