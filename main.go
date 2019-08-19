@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/weilbyte/daily_problem/problems"
+	"github.com/weilbyte/DailyCodingProblem/problems"
 	"os"
 	"strconv"
 )
