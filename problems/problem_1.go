@@ -15,6 +15,7 @@ func Problem1() {
 
 func problem1solution() {
 	numList := []int{}
+	match := false
 	fmt.Print("Provide list of numbers seperated by a space: ")
 	numListStringInput := bufio.NewScanner(os.Stdin)
 	numListStringInput.Scan()
@@ -35,11 +36,11 @@ func problem1solution() {
 	}
 	for _, x := range numList {
 		for _, y := range numList {
-			xysum := x + y
-			if xysum == k {
-				fmt.Printf("The sum of %v and %s make k\n", strconv.Itoa(x), strconv.Itoa(y))
+			if x+y == k {
+				match = true
 			}
 		}
 	}
-	fmt.Println("\n Done.")
+	fmt.Println(match)
+	fmt.Println("\nDone.")
 }
