@@ -28,16 +28,12 @@ func problem2solution() {
 		numArrayOriginal = append(numArrayOriginal, res)
 	}
 	for xi, _ := range numArrayOriginal {
-		sum := 0
+		sum := 1
 		for yi, y := range numArrayOriginal {
 			if yi == xi {
 				continue
 			}
-			if sum == 0 {
-				sum = y
-				continue
-			}
-			sum = sum * y
+			sum *= y
 		}
 		numArrayResult = append(numArrayResult, sum)
 	}
