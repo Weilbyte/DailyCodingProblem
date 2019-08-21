@@ -9,7 +9,9 @@ import (
 //Problem3 prints a brief info about the problem and runs the solution
 func Problem3() {
 	problemInfo("Google", "Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.")
-	problem3solution()
+	bst := []int{5, 2, -4, 3, 21, 19, 25}
+	fmt.Printf("Attempting with BST of %v\n", bst)
+	fmt.Println(problem3solution(bst))
 }
 
 //Node epresents a binary tree node
@@ -24,9 +26,8 @@ type Serial struct {
 	Value string
 }
 
-func problem3solution() {
-	fmt.Println("Attempting with BST of 5 2 -4 3 21 19 25")
-	input := [7]int{5, 2, -4, 3, 21, 19, 25}
+func problem3solution(input []int) string {
+
 	Tree := Node{Right: nil, Left: nil, Value: input[0]}
 	for xi, x := range input {
 		if xi == 0 {
@@ -35,8 +36,9 @@ func problem3solution() {
 		addNode(&Tree, x)
 	}
 	if Tree.Left.Left.Value == deserialize(serialize(&Tree)).Left.Left.Value {
-		fmt.Println("Passed.")
+		return "Passed"
 	}
+	return "Failed"
 }
 
 func addNode(tree *Node, val int) {
