@@ -9,7 +9,7 @@ import (
 )
 
 func problemInfo(askedBy string, problem string) {
-	fmt.Printf("Asked by: %v\nProblem: %s\n\n", askedBy, problem)
+	fmt.Printf("\nAsked by: %v\nProblem: %s\n\n", askedBy, problem)
 }
 
 func InputNumbersBySpace(inputText string) []int {
