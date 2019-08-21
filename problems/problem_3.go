@@ -6,17 +6,20 @@ import (
 	"strings"
 )
 
+//Daily Coding Problem #3
 func Problem3() {
 	problemInfo("Google", "Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.")
 	problem3solution()
 }
 
+//Represents a binary tree node
 type Node struct {
 	Left  *Node
 	Right *Node
 	Value int
 }
 
+//Holds serialized string
 type Serial struct {
 	Value string
 }

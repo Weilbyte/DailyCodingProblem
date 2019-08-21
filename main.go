@@ -11,7 +11,7 @@ import (
 func main() {
 	curSolvedList := []int{1, 2, 3, 4} //Add new number for each solved problem
 	var curSolvedString string
-	var curSolvedCount int8 = 0
+	var curSolvedCount int8
 	for _, number := range curSolvedList {
 		pfx := ", "
 		if len(curSolvedString) == 0 {
