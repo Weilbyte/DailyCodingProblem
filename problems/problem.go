@@ -1,4 +1,4 @@
-//This package contains the daily coding problems.
+//Package problems contains the daily coding problems.
 package problems
 
 import (
@@ -13,7 +13,7 @@ func problemInfo(askedBy string, problem string) {
 	fmt.Printf("\nAsked by: %v\nProblem: %s\n\n", askedBy, problem)
 }
 
-// Reads input, which should be numbers, and splits them into an array by whitespace.
+// InputNumbersBySpace input, which should be numbers, and splits them into an array by whitespace.
 // Returns the result array.
 func InputNumbersBySpace(inputText string) []int {
 	result := []int{}

@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-//Daily Coding Problem #1
+//Problem1 prints a brief info about the problem and runs the solution
 func Problem1() {
 	problemInfo("Google", "Given a list of numbers and a number k, return whether any two numbers from the list add up to k.")
 	problem1solution()

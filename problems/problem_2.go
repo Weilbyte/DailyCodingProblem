@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-//Daily Coding Problem #2
+//Problem2 prints a brief info about the problem and runs the solution
 func Problem2() {
 	problemInfo("Uber", "Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.")
 	problem2solution()
