@@ -2,6 +2,7 @@ package problems
 
 import (
 	"fmt"
+	"os"
 	"sort"
 )
 
@@ -12,7 +13,11 @@ func Problem4() {
 }
 
 func problem4solution() {
-	arrayraw := InputNumbersBySpace("Provide list of numbers for array, seperated by space")
+	arrayraw, err := InputNumbersBySpace("Provide list of numbers for array, seperated by space")
+	if err != nil {
+		fmt.Println("Error: ", err)
+		os.Exit(1)
+	}
 	array := []int{}
 	for _, x := range arrayraw {
 		if containsNum(array, x) || (x < 0) {

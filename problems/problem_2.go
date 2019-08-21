@@ -2,6 +2,7 @@ package problems
 
 import (
 	"fmt"
+	"os"
 )
 
 //Problem2 prints a brief info about the problem and runs the solution
@@ -11,7 +12,11 @@ func Problem2() {
 }
 
 func problem2solution() {
-	numArrayOriginal := InputNumbersBySpace("Provide a list of numbers to add to array, seperated by a space")
+	numArrayOriginal, err := InputNumbersBySpace("Provide a list of numbers to add to array, seperated by a space")
+	if err != nil {
+		fmt.Println("Error: ", err)
+		os.Exit(1)
+	}
 	numArrayResult := []int{}
 	for xi := range numArrayOriginal {
 		sum := 1

@@ -3,10 +3,12 @@ package problems
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
 	"strings"
+	"unicode"
 )
 
 func problemInfo(askedBy string, problem string) {
@@ -15,18 +17,27 @@ func problemInfo(askedBy string, problem string) {
 
 // InputNumbersBySpace input, which should be numbers, and splits them into an array by whitespace.
 // Returns the result array.
-func InputNumbersBySpace(inputText string) []int {
+func InputNumbersBySpace(inputText string) (array []int, err error) {
 	result := []int{}
 	fmt.Print(inputText + ": ")
 	stringInput := bufio.NewScanner(os.Stdin)
 	stringInput.Scan()
 	stringSpace := strings.Fields(stringInput.Text())
 	for _, n := range stringSpace {
+		for _, r := range n {
+			if unicode.IsLetter(r) {
+				return []int{}, errors.New("Input accepts numbers only")
+			}
+		}
 		nInteger, err := strconv.Atoi(n)
 		result = append(result, nInteger)
 		if err != nil {
 			fmt.Printf("Error: %s", err)
 		}
 	}
-	return result
+	return result, nil
+}
+
+func trueBL() bool {
+	return true
 }
