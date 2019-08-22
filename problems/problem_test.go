@@ -48,3 +48,20 @@ func TestProblem4Solution(t *testing.T) {
 		t.Errorf("problem4solution/test2: Expected 3, got '%v'", test2)
 	}
 }
+
+func TestProblem5Solution(t *testing.T) {
+	conspair := Pair{first: 3, last: 4}
+	constest := cons(3, 4)
+	cartest := car(cons(3, 4))
+	cdrtest := cdr(cons(3, 4))
+	if (conspair.first != constest.first) || (conspair.last != constest.last) {
+		t.Errorf("problem5/constest: Expected %v, got '%v'", conspair, constest)
+	}
+	if cartest != 3 {
+		t.Errorf("problem5/cartest: Expected 3, got '%v'", cartest)
+	}
+	if cdrtest != 4 {
+		t.Errorf("problem5/cdrtest: Expected 4, got '%v'", cdrtest)
+	}
+
+}
