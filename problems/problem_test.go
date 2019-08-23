@@ -63,5 +63,23 @@ func TestProblem5Solution(t *testing.T) {
 	if cdrtest != 4 {
 		t.Errorf("problem5/cdrtest: Expected 4, got '%v'", cdrtest)
 	}
+}
+
+func TestProblem6Solution(t *testing.T) {
+	tnode := &XORNode{value: 00, both: uintptr(0)}
+	addxor(tnode, 10)
+	addxor(tnode, 20)
+	testi0 := getxor(tnode, 0).value
+	testi1 := getxor(tnode, 1).value
+	testi2 := getxor(tnode, 2).value
+	if testi0 != 00 {
+		t.Errorf("problem6/testi0: Expected 00, got '%v'", testi0)
+	}
+	if testi1 != 10 {
+		t.Errorf("problem6/testi1: Expected 10, got '%v'", testi1)
+	}
+	if testi2 != 20 {
+		t.Errorf("problem6/testi2: Expected 20, got '%v'", testi2)
+	}
 
 }
