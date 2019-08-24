@@ -1,4 +1,4 @@
-//Package problems_10 contains the problems from 0-10
+//Package problems10 contains the problems from 0-10
 package problems10
 
 /* Problem Info
