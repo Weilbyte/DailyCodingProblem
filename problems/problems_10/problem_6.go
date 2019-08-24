@@ -1,4 +1,4 @@
-package problems_10
+package problems10
 
 /* Problem Info
 Asked by: Google

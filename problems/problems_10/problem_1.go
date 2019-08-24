@@ -1,5 +1,5 @@
 //Package problems_10 contains the problems from 0-10
-package problems_10
+package problems10
 
 /* Problem Info
 Asked by: Google
