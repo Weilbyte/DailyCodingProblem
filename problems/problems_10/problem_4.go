@@ -12,18 +12,6 @@ import (
 	"sort"
 )
 
-func problem4solution(arrayraw []int) int {
-	array := []int{}
-	for _, x := range arrayraw {
-		if containsNum(array, x) || (x < 0) {
-			continue
-		}
-		array = append(array, x)
-	}
-	sort.Ints(array)
-	return findSmallestMissing(array)
-}
-
 func containsNum(array []int, number int) bool {
 	for _, x := range array {
 		if x == number {
@@ -33,7 +21,15 @@ func containsNum(array []int, number int) bool {
 	return false
 }
 
-func findSmallestMissing(array []int) int {
+func findSmallestMissing(arrayinput []int) int {
+	array := []int{}
+	for _, x := range arrayinput {
+		if containsNum(array, x) || (x < 0) {
+			continue
+		}
+		array = append(array, x)
+	}
+	sort.Ints(array)
 	num := 1
 	for _, x := range array {
 		if x == 0 {

@@ -25,22 +25,6 @@ type serial struct {
 	Value string
 }
 
-//move to unit test
-func problem3solution(input []int) string {
-
-	Tree := node{Right: nil, Left: nil, Value: input[0]}
-	for xi, x := range input {
-		if xi == 0 {
-			continue
-		}
-		addNode(&Tree, x)
-	}
-	if Tree.Left.Left.Value == deserialize(serialize(&Tree)).Left.Left.Value {
-		return "Passed"
-	}
-	return "Failed"
-}
-
 func addNode(tree *node, val int) {
 	insertee := &node{Value: val}
 	if insertee.Value > tree.Value {
@@ -57,25 +41,25 @@ func addNode(tree *node, val int) {
 	}
 }
 
-func traverse(root *node, s *serial) {
+func traversetree(root *node, s *serial) {
 	if root != nil {
 		pfx := "#"
 		if len(s.Value) == 0 {
 			pfx = ""
 		}
 		s.Value += fmt.Sprintf("%v%s", pfx, strconv.Itoa(root.Value))
-		traverse(root.Left, s)
-		traverse(root.Right, s)
+		traversetree(root.Left, s)
+		traversetree(root.Right, s)
 	}
 }
 
-func serialize(root *node) string {
+func serializetree(root *node) string {
 	serialized := serial{Value: ""}
-	traverse(root, &serialized)
+	traversetree(root, &serialized)
 	return serialized.Value
 }
 
-func deserialize(serialized string) *node {
+func deserializetree(serialized string) *node {
 	sArray := strings.Split(serialized, "#")
 	i, e := strconv.Atoi(sArray[0])
 	if e != nil {

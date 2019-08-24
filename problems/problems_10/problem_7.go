@@ -16,17 +16,6 @@ import (
 	"unicode"
 )
 
-//Add to unit test
-func problem7solution(input string) {
-	output := encode(input)
-	fmt.Println(output)
-	words := strings.Fields(output)
-	for _, word := range words {
-		fmt.Printf("Ways to solve %v - %v\n", word, decode(word))
-	}
-
-}
-
 func decode(input string) int {
 	if len(input) <= 1 {
 		return 1
