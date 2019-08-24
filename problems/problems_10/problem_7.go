@@ -19,13 +19,13 @@ import (
 func decode(input string) int {
 	if len(input) <= 1 {
 		return 1
-	} else {
-		numb, _ := strconv.Atoi(input[:2])
-		if (1 <= numb) && (numb <= 26) {
-			return decode(input[1:]) + decode(input[2:])
-		}
-		return decode(input[1:])
 	}
+	numb, _ := strconv.Atoi(input[:2])
+	if (1 <= numb) && (numb <= 26) {
+		return decode(input[1:]) + decode(input[2:])
+	}
+	return decode(input[1:])
+
 }
 
 func encode(input string) string {
