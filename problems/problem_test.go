@@ -81,5 +81,19 @@ func TestProblem6Solution(t *testing.T) {
 	if testi2 != 20 {
 		t.Errorf("problem6/testi2: Expected 20, got '%v'", testi2)
 	}
+}
 
+func TestProblem7Solution(t *testing.T) {
+	decodetest := decode("111")
+	if decodetest != 3 {
+		t.Errorf("problem7/decodetest: Expected 3, got '%v'", decodetest)
+	}
+	decodetest = decode("666")
+	if decodetest != 1 {
+		t.Errorf("problem7/decodetest: Expected 1, got '%v'", decodetest)
+	}
+	decodetest = decode("266")
+	if decodetest != 2 {
+		t.Errorf("problem7/decodetest: Expected 2, got '%v'", decodetest)
+	}
 }
