@@ -1,23 +1,22 @@
-package problems
+package problems_10
+
+/* Problem Info
+Asked by: Facebook
+
+Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
+For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
+You can assume that the messages are decodable, for example, '001' is not allowed.
+
+*/
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 	"strconv"
 	"strings"
 	"unicode"
 )
 
-//Problem7 prints a brief info about the problem and runs the solution
-func Problem7() {
-	problemInfo("Facebook", "Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded. For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'. You can assume that the messages are decodable. For example, '001' is not allowed.")
-	fmt.Println("Message to encode: ")
-	input := bufio.NewScanner(os.Stdin)
-	input.Scan()
-	problem7solution(input.Text())
-}
-
+//Add to unit test
 func problem7solution(input string) {
 	output := encode(input)
 	fmt.Println(output)

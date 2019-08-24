@@ -1,5 +1,5 @@
-//Package problems contains the daily coding problems.
-package problems
+//Package problems_common contains common functions shared between all the problems
+package problems_common
 
 import (
 	"bufio"
@@ -36,8 +36,4 @@ func InputNumbersBySpace(inputText string) (array []int, err error) {
 		}
 	}
 	return result, nil
-}
-
-func trueBL() bool {
-	return true
 }

@@ -1,4 +1,11 @@
-package problems
+package problems_10
+
+/* Problem Info
+Asked by: Google
+
+Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.
+
+*/
 
 import (
 	"fmt"
@@ -6,29 +13,22 @@ import (
 	"strings"
 )
 
-//Problem3 prints a brief info about the problem and runs the solution
-func Problem3() {
-	problemInfo("Google", "Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.")
-	bst := []int{5, 2, -4, 3, 21, 19, 25}
-	fmt.Printf("Attempting with BST of %v\n", bst)
-	fmt.Println(problem3solution(bst))
-}
-
-//Node epresents a binary tree node
-type Node struct {
-	Left  *Node
-	Right *Node
+//node epresents a binary tree node
+type node struct {
+	Left  *node
+	Right *node
 	Value int
 }
 
-//Serial holds the serialized string
-type Serial struct {
+//serial holds the serialized string
+type serial struct {
 	Value string
 }
 
+//move to unit test
 func problem3solution(input []int) string {
 
-	Tree := Node{Right: nil, Left: nil, Value: input[0]}
+	Tree := node{Right: nil, Left: nil, Value: input[0]}
 	for xi, x := range input {
 		if xi == 0 {
 			continue
@@ -41,23 +41,23 @@ func problem3solution(input []int) string {
 	return "Failed"
 }
 
-func addNode(tree *Node, val int) {
-	insertee := &Node{Value: val}
+func addNode(tree *node, val int) {
+	insertee := &node{Value: val}
 	if insertee.Value > tree.Value {
 		if tree.Right == nil {
-			tree.Right = &Node{Value: insertee.Value}
+			tree.Right = &node{Value: insertee.Value}
 		}
 		addNode(tree.Right, val)
 	}
 	if insertee.Value < tree.Value {
 		if tree.Left == nil {
-			tree.Left = &Node{Value: insertee.Value}
+			tree.Left = &node{Value: insertee.Value}
 		}
 		addNode(tree.Left, val)
 	}
 }
 
-func traverse(root *Node, s *Serial) {
+func traverse(root *node, s *serial) {
 	if root != nil {
 		pfx := "#"
 		if len(s.Value) == 0 {
@@ -69,19 +69,19 @@ func traverse(root *Node, s *Serial) {
 	}
 }
 
-func serialize(root *Node) string {
-	serialized := Serial{Value: ""}
+func serialize(root *node) string {
+	serialized := serial{Value: ""}
 	traverse(root, &serialized)
 	return serialized.Value
 }
 
-func deserialize(serialized string) *Node {
+func deserialize(serialized string) *node {
 	sArray := strings.Split(serialized, "#")
 	i, e := strconv.Atoi(sArray[0])
 	if e != nil {
 		fmt.Println("Error has occureddd!", e)
 	}
-	Result := Node{Right: nil, Left: nil, Value: i}
+	Result := node{Right: nil, Left: nil, Value: i}
 	for _, x := range sArray {
 		ii, e := strconv.Atoi(x)
 		if e != nil {
