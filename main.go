@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	curSolvedList := []int{1, 2, 3, 4, 5, 6, 7} //Add new number for each solved problem
+	curSolvedList := []int{1, 2, 3, 4, 5, 6, 7, 8} //Add new number for each solved problem
 	var curSolvedString string
 	for _, number := range curSolvedList {
 		if len(curSolvedString) == 0 {

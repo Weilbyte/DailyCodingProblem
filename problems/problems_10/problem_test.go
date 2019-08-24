@@ -97,6 +97,14 @@ func Test_Problem7(t *testing.T) {
 	}
 	test = decode(encode("zf"))
 	if test != 2 {
-		t.Errorf("problem_7/test: Expected 2, got '%v'", test)
+		t.Errorf("problem_7/test03: Expected 2, got '%v'", test)
+	}
+}
+
+func Test_Problem8(t *testing.T) {
+	testtree := &node{Value: 0, Left: &node{Value: 1}, Right: &node{Value: 0, Right: &node{Value: 0}, Left: &node{Value: 1, Right: &node{Value: 1}, Left: &node{Value: 1}}}}
+	test := countUnivalHelper(testtree)
+	if test != 5 {
+		t.Errorf("problem_8/test01: Expected 5, got '%v'", test)
 	}
 }
