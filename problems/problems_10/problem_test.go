@@ -108,3 +108,21 @@ func Test_Problem8(t *testing.T) {
 		t.Errorf("problem_8/test01: Expected 5, got '%v'", test)
 	}
 }
+
+func Test_Problem9(t *testing.T) {
+	test := naSum([]int{2, 4, 6, 2, 5})
+	if test != 13 {
+		t.Errorf("problem_9/test01: Expected 13, got '%v'", test)
+	}
+	test = naSum([]int{5, 1, 1, 5})
+	if test != 10 {
+		t.Errorf("problem_9/test02: Expected 10, got '%v'", test)
+	}
+}
+
+func Test_Problem10(t *testing.T) {
+	test := runAfter(runAfterExample, 200)
+	if test != true {
+		t.Errorf("problem_10/test01: Expected true, got '%v'", test)
+	}
+}
