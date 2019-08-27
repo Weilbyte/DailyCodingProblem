@@ -9,7 +9,7 @@ Implement a job scheduler which takes in a function f and an integer n, and call
 
 import "time"
 
-var runAfterWork bool = false
+var runAfterWork = false
 
 func runAfterExample() {
 	runAfterWork = true
